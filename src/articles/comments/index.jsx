@@ -1,8 +1,7 @@
-import React from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useState } from "react";
 
 const Comments = ({ name, comments, setArticleInfo }) => {
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState();
   const handleCommentPost = async () => {
     const result = await fetch(`/api/articles/${name}/add-comment`, {
       method: "post",
